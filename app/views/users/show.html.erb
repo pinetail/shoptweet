@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Twitter:</b>
+  <%= @user.twitter_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Screen name:</b>
+  <%= @user.screen_name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+<p>
+  <b>Timezone:</b>
+  <%= @user.timezone %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @user.description %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @user.url %>
+</p>
+
+<p>
+  <b>Profile image url:</b>
+  <%= @user.profile_image_url %>
+</p>
+
+<p>
+  <b>Lang:</b>
+  <%= @user.lang %>
+</p>
+
+<p>
+  <b>Friends count:</b>
+  <%= @user.friends_count %>
+</p>
+
+<p>
+  <b>Statuses count:</b>
+  <%= @user.statuses_count %>
+</p>
+
+<p>
+  <b>Follwers count:</b>
+  <%= @user.follwers_count %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%= @user.lat %>
+</p>
+
+<p>
+  <b>Lng:</b>
+  <%= @user.lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

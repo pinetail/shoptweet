@@ -1,0 +1,29 @@
+<h1>Listing timelines</h1>
+
+<table>
+  <tr>
+    <th>Twitter</th>
+    <th>Text</th>
+    <th>Retweeted</th>
+    <th>Source</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @timelines.each do |timeline| %>
+  <tr>
+    <td><%= timeline.twitter_id %></td>
+    <td><%= timeline.text %></td>
+    <td><%= timeline.retweeted %></td>
+    <td><%= timeline.source %></td>
+    <td><%= link_to 'Show', timeline %></td>
+    <td><%= link_to 'Edit', edit_timeline_path(timeline) %></td>
+    <td><%= link_to 'Destroy', timeline, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Timeline', new_timeline_path %>

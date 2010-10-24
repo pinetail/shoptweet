@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  twitter_id: 1
+  name: MyString
+  screen_name: MyString
+  location: MyString
+  timezone: MyString
+  description: MyText
+  url: MyString
+  profile_image_url: MyString
+  lang: MyString
+  friends_count: 1
+  statuses_count: 1
+  follwers_count: 1
+  lat: 1.5
+  lng: 1.5
+
+two:
+  twitter_id: 1
+  name: MyString
+  screen_name: MyString
+  location: MyString
+  timezone: MyString
+  description: MyText
+  url: MyString
+  profile_image_url: MyString
+  lang: MyString
+  friends_count: 1
+  statuses_count: 1
+  follwers_count: 1
+  lat: 1.5
+  lng: 1.5

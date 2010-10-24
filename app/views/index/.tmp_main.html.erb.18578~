@@ -1,0 +1,209 @@
+
+<div id="wrapper">
+<!-- header -->
+<div id="header">
+<div class="site">
+<p>さまざまな業界のエンジニアに必要な情報まとめてセンシング！</p>
+<p class="title">Engineer Sensor β　エンジニアセンサベータ版</p>
+</div>  
+<p class="logo"><img src="/images/logo.gif" alt="KEYENCE" /></p>
+</div>  
+<!-- /header -->
+
+<!-- container -->
+<div id="container">
+
+<!-- main -->
+<div id="main">
+<div id="banner_main">
+<div id="map_canvas" style="width:670px; height:450px;"></div>
+</div>  
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
+    <script type="text/javascript"> 
+    google.maps.event.addDomListener(window, 'load', function() {
+        var mapdiv = document.getElementById("map_canvas");
+        var myOptions = {
+            zoom: 13,
+            center: new google.maps.LatLng(35.686773, 139.68815),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scaleControl: true,
+        };
+        var map = new google.maps.Map(mapdiv, myOptions);
+		
+		jQuery.getJSON("/api/users.json", function(json) {
+
+            for(var i in json) {
+			    console.log(json[i].user.lat);
+				console.log(json[i].user.profile_image_url);
+                var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(json[i].user.lat, json[i].user.lng),
+                map: map, 
+                title: json[i].user.screen_name,
+                icon: json[i].user.profile_image_url
+            });
+//            attachMarkerEvent(marker, i);
+      }
+    });
+	
+	function attachMarkerEvent(marker, k) {
+    google.maps.event.addListener(marker, "click", function() {
+      window.location.href = "#" + k;
+    });
+    return true;
+}
+    });
+</script> 
+<!-- Content: START -->
+<div class="factbox object-right">
+<div class="border-box factbox-header">
+<div class="border-tl">
+<div class="border-tr">
+<div class="border-tc">
+</div>
+</div>
+</div>
+<div class="border-ml">
+<div class="border-mr">
+<div class="border-mc">
+<div class="box-content">
+<h2>キーワードランキング</h2>
+<p class="update">2009/12/10 UPdate!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-box factbox-content">
+<div class="border-ml">
+<div class="border-mr">
+<div class="border-mc">
+<div class="box-content">
+<div class="">
+<div class="content-view-embed">
+<div class="class-image">
+<div class="attribute-image">
+</div>
+</div>
+</div>
+</div>
+<p><span>今月の注目キーワードＢＥＳＴ50を大公開！気になるキーワードで最適な情報を手に入れてください。</span></p>
+<table class="list" border="0" cellpadding="0" cellspacing="0" width="100%" summary="rank1">
+<tr>
+<td colspan="3" rowspan="1" valign="top"><p class="best3">まずは今月のベスト3</p></td>
+</tr>
+<% for timeline in @timelines %>
+<tr class="line">
+<td class="rank"><img src="<%= timeline.profile_image_url.force_encoding("UTF-8") %>" alt="1位" /></td>
+<td class="keyword"><a href="#"><%= timeline.screen_name.force_encoding("UTF-8") %></a></td>
+<td class="comment"><%= timeline.text.force_encoding("UTF-8") %><% @hoge %></td>
+</tr>
+
+<% end %>
+</table>
+
+
+<p class="back_number"><a href="#"><img src="/images/list_footer.gif" alt="" />以前の新着キーワードランキング</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-bl">
+<div class="border-br">
+<div class="border-bc">
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Content: END -->
+
+</div>
+<!-- /main -->
+
+<!-- side -->
+<div id="side">
+
+<div class="information">
+<h2>お知らせ</h2>
+<p class="date">2009/12/1更新</p>
+<p>サイトオープンしました！<br />
+文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります</p>
+<p class="info_list">文章が入ります文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+
+<div class="reccomend">
+<div class="reccomend_in">
+<h2>おすすめサイト</h2>
+<p>文章が入ります文章が入ります文章が入ります</p>
+</div>
+<p class="site_img"><a href="#" target="_blank">おすすめサイト</a></p>
+</div>
+
+<div class="technical">
+<h2>おすすめ技術資料</h2>
+<div class="data_top">
+<img src="/images/img_data.gif" alt="" />
+<p><a href="#">業界別　変位センサ活用事例集</a><br />
+文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+<div class="data">
+<img src="/images/img_data.gif" alt="" />
+<p><a href="#">業界別　変位センサ活用事例集</a><br />
+文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+<div class="data">
+<img src="/images/img_data.gif" alt="" />
+<p><a href="#">業界別　変位センサ活用事例集</a><br />
+文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+<div class="data">
+<img src="/images/img_data.gif" alt="" />
+<p><a href="#">業界別　変位センサ活用事例集</a><br />
+文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+<div class="data">
+<img src="/images/img_data.gif" alt="" />
+<p><a href="#">業界別　変位センサ活用事例集</a><br />
+文章が入ります文章が入ります文章が入ります文章が入ります</p>
+</div>
+</div>
+
+</div>
+<!-- /side -->
+
+</div>
+<!-- /container -->
+
+<!-- footer -->
+<div id="footer">
+
+<div class="navi">
+<div class="use">
+<h2>サイトの利用について</h2>
+<ul>
+<li><a href="#">運営会社</a></li>
+<li><a href="#">プライベートポリシー</a></li>
+</ul>
+</div>
+<div class="contact">
+<h2>お問い合わせ</h2>
+<ul>
+<li><a href="#">本サイトに関するお問い合わせ</a></li>
+<li><a href="#">製品に関するお問い合わせ</a></li>
+</ul>
+</div>
+<div class="link">
+<h2>関連サイト</h2>
+<ul>
+<li><a href="http://www.keyence.co.jp/" target="_blank">http://www.keyence.co.jp</a></li>
+</ul>
+</div>
+
+</div>
+<p class="copyright">Copyright(c) 2009 KEYENCE CORPORATION. All rights reserved.</p>
+</div>
+<!-- /footer -->
+
+</div>
+<!-- /wrapper -->
+

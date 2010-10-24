@@ -1,4 +1,16 @@
 Twittenpo::Application.routes.draw do
+  get "api/timelines"
+
+  get "api/users"
+
+  get "api/index"
+
+  get "index/main"
+
+  resources :timelines
+
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
